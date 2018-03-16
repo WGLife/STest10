@@ -1,15 +1,14 @@
-﻿using System;
-using System.Text;
-using NUnit.Framework;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Firefox;
-using OpenQA.Selenium.Support.UI;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 
 namespace SeleniumTask1
 {
+    /// <summary>
+    /// 1. Create test 1, which goes to RMSys login page, login with correct credentials (Username – EugenBorisik, Password – qwerty12345, URL - https://192.168.100.26/).
+    /// </summary>
+
     [TestClass]
     public class Test1
     {
@@ -23,16 +22,11 @@ namespace SeleniumTask1
             driver.FindElement(By.Id("Username")).SendKeys("EugenBorisik");
             driver.FindElement(By.Id("Password")).SendKeys("qwerty12345");
             driver.FindElement(By.Id("SubmitButton")).Click();
-            Console.WriteLine("URL: " + driver.Url.ToString());
-            Console.WriteLine("Title: " + driver.Title.ToString());
-
-            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsTrue(driver.Url.ToString().Contains("192.168.100.26") && (driver.Title.ToString() == "RMSys - Home"));
         }
         [TestCleanup]
         public void TestCleanUp()
         {
-            // 2. Create test 2, which perform logout from RMSys.
-            //driver.FindElementByLinkText("Sign Out").Click(); 
+
             driver.Quit();
         }
     }

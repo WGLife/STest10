@@ -5,6 +5,9 @@ using OpenQA.Selenium.Chrome;
 
 namespace SeleniumTask1
 {
+    /// <summary>
+    /// 4. Create additional class with By variables, which covers all possible types of location in Selenium WebDriver.
+    /// </summary>
     public class ClassLocationSelenium
     {
         public IWebDriver webDriver;
