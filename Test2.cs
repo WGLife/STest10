@@ -13,27 +13,23 @@ namespace SeleniumTask1
     public class Test2
     {
         IWebDriver driver = new ChromeDriver();
-        public Test2()
-        {
-            
-        }
 
         [TestMethod]
-        public void TestMethod2()
+        public void LoginTest2()
         {
             driver.Navigate().GoToUrl("https://192.168.100.26/");
             driver.FindElement(By.Id("Username")).SendKeys("EugenBorisik");
             driver.FindElement(By.Id("Password")).SendKeys("qwerty12345");
-            driver.FindElement(By.Id("SubmitButton")).Click();
-            Console.WriteLine("URL: " + driver.Url.ToString());
-            Console.WriteLine("Title: " + driver.Title.ToString());
-            Assert.IsTrue(driver.Url.ToString().Contains("192.168.100.26") && (driver.Title.ToString() == "RMSys - Home"));
+            driver.FindElement(By.Id("SubmitButton")).Click();   
+            Assert.IsTrue(driver.Url.ToString().Contains("192.168.100.26"));
+            Assert.AreEqual("RMSys - Home",driver.Title.ToString());
             driver.FindElement(By.LinkText("Sign Out")).Click();
+            Assert.AreEqual("RMSys - Sign In", driver.Title.ToString());
         }
+
         [TestCleanup()]
         public void MyTestCleanup()
         {
-
             driver.Quit();
         }
     }

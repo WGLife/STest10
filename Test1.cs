@@ -13,20 +13,20 @@ namespace SeleniumTask1
     public class Test1
     {
         IWebDriver driver = new ChromeDriver();
-        //FirefoxDriver driver = new FirefoxDriver();
-        [TestMethod]
-        public void TestMethod1()
-        {
 
+        [TestMethod]
+        public void LoginTest()
+        {
             driver.Navigate().GoToUrl("https://192.168.100.26/");
             driver.FindElement(By.Id("Username")).SendKeys("EugenBorisik");
             driver.FindElement(By.Id("Password")).SendKeys("qwerty12345");
             driver.FindElement(By.Id("SubmitButton")).Click();
+            Assert.AreEqual("RMSys - Home", driver.Title.ToString());
         }
+
         [TestCleanup]
         public void TestCleanUp()
         {
-
             driver.Quit();
         }
     }
