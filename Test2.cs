@@ -10,19 +10,19 @@ namespace SeleniumTask1
     /// 3. Modify test 2: add extra assertion, which will be assert, that current URL contains the following part – “192.168.100.26”.
     /// </summary>
     [TestClass]
-    public class Test2
+    public class TLogoutClass
     {
         IWebDriver driver = new ChromeDriver();
 
         [TestMethod]
-        public void LoginTest2()
+        public void LogoutTest()
         {
             driver.Navigate().GoToUrl("https://192.168.100.26/");
             driver.FindElement(By.Id("Username")).SendKeys("EugenBorisik");
             driver.FindElement(By.Id("Password")).SendKeys("qwerty12345");
-            driver.FindElement(By.Id("SubmitButton")).Click();   
-            Assert.IsTrue(driver.Url.ToString().Contains("192.168.100.26"));
-            Assert.AreEqual("RMSys - Home",driver.Title.ToString());
+            driver.FindElement(By.Id("SubmitButton")).Click();
+            //Verify if current URL contains the following part – “192.168.100.26”.
+            //Assert.IsTrue(driver.Url.ToString().Contains("192.168.100.26"));
             driver.FindElement(By.LinkText("Sign Out")).Click();
             Assert.AreEqual("RMSys - Sign In", driver.Title.ToString());
         }

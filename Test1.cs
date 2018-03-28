@@ -10,7 +10,7 @@ namespace SeleniumTask1
     /// </summary>
 
     [TestClass]
-    public class Test1
+    public class LoginClass
     {
         IWebDriver driver = new ChromeDriver();
 
