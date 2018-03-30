@@ -10,7 +10,7 @@ namespace SeleniumTask1
     /// 3. Modify test 2: add extra assertion, which will be assert, that current URL contains the following part – “192.168.100.26”.
     /// </summary>
     [TestClass]
-    public class TLogoutClass
+    public class LogoutClass
     {
         IWebDriver driver = new ChromeDriver();
 

@@ -78,9 +78,15 @@
   </Choose>
   <ItemGroup>
     <Compile Include="ClassLocationSelenium.cs" />
-    <Compile Include="Test1.cs" />
+    <Compile Include="ExplicitWebDriverWaiterTest.cs" />
+    <Compile Include="IFrameTest.cs" />
+    <Compile Include="ImplicitWebDriverWaiterTest.cs" />
+    <Compile Include="JSAlertTest.cs" />
+    <Compile Include="JSConfirmTest.cs" />
+    <Compile Include="JSPromptTest.cs" />
+    <Compile Include="LoginTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Test2.cs" />
+    <Compile Include="LogoutTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
